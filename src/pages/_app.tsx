@@ -1,11 +1,22 @@
 import AppShell from "@/components/layouts/AppShell";
+import NProgressLoader from "@/components/elements/NProgressLoader";
 import "@/styles/globals.css";
+import "@/styles/nprogress.css";
 import type { AppProps } from "next/app";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
-    <AppShell>
-      <Component {...pageProps} />
-    </AppShell>
+    <>
+      <SessionProvider session={session}>
+        <NProgressLoader />
+        <AppShell>
+          <Component {...pageProps} />
+        </AppShell>
+      </SessionProvider>
+    </>
   );
 }

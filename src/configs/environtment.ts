@@ -5,4 +5,7 @@ export const environment = {
   FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET || "",
   FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID || "",
   FIREBASE_APP_ID: process.env.FIREBASE_APP_ID || "",
+  SECRET_KEY_NEXT_MY_APP: process.env.SECRET_KEY_NEXT_MY_APP || "",
+  
+  NEXT_AUTH_SECRET: process.env.NEXT_AUTH_SECRET || "",
 };
