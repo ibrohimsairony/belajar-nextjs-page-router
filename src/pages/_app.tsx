@@ -11,12 +11,19 @@ export default function App({
 }: AppProps) {
   return (
     <>
+<<<<<<< HEAD
       <SessionProvider session={session}>
         <NProgressLoader />
         <AppShell>
           <Component {...pageProps} />
         </AppShell>
       </SessionProvider>
+=======
+      <NProgressLoader />
+      <AppShell>
+        <Component {...pageProps} />
+      </AppShell>
+>>>>>>> 693567187f7e9da7a814941fa1511b176ba24b2f
     </>
   );
 }
