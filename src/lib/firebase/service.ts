@@ -4,6 +4,7 @@ import {
   getDoc,
   getDocs,
   getFirestore,
+  query,
 } from "firebase/firestore";
 import app from "./init";
 
@@ -36,6 +37,26 @@ export async function retrieveDataById<T>(
     return data as T;
   } catch (error) {
     console.error("Error retrieving data By Id: ", error);
+    return null;
+  }
+}
+
+export async function signUp(
+  userData: { email: string; password: string; fullName: string },
+  callback: () => void
+): Promise<any> {
+  try {
+    // const q = await query(collection(firestore, "users"), where("email", "==", userData.email")))
+
+    const user = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    if (user.length > 0) {
+      return res;
+    }
+  } catch (error) {
+    console.error("Error retrieving data: ", error);
     return null;
   }
 }
